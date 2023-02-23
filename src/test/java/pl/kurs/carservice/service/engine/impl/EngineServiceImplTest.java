@@ -8,7 +8,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.util.Assert;
 import pl.kurs.carservice.dao.EngineRepository;
 import pl.kurs.carservice.models.Engine;
 
@@ -56,10 +55,5 @@ class EngineServiceImplTest {
 
         Assertions.assertEquals(expectedResult, result);
 
-    }
-
-    @Test
-    void dupa() {
-        Assert.isTrue(true, "true");
     }
 }
