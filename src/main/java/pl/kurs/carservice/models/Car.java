@@ -22,6 +22,7 @@ public class Car implements Serializable {
 
     private String producer;
     private String model;
+    private int year;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "engine_id")
@@ -30,9 +31,10 @@ public class Car implements Serializable {
     public Car() {
     }
 
-    public Car(String producer, String model, Engine engine) {
+    public Car(String producer, String model, int year, Engine engine) {
         this.producer = producer;
         this.model = model;
+        this.year = year;
         this.engine = engine;
     }
 
@@ -41,11 +43,11 @@ public class Car implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Objects.equals(id, car.id) && Objects.equals(producer, car.producer) && Objects.equals(model, car.model) && Objects.equals(engine, car.engine);
+        return year == car.year && Objects.equals(id, car.id) && Objects.equals(producer, car.producer) && Objects.equals(model, car.model) && Objects.equals(engine, car.engine);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, producer, model, engine);
+        return Objects.hash(id, producer, model, year, engine);
     }
 }
