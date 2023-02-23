@@ -27,9 +27,9 @@ class CarWashTest {
 
     @Test
     public void shouldSuccessWhenAllCarsAreAddedToQueue() {
-        Car car1 = new Car("Bmw", "340i", null);
-        Car car2 = new Car("Mercedes", "C300", null);
-        Car car3 = new Car("Audi", "A5", null);
+        Car car1 = new Car("Bmw", "340i", 2015, null);
+        Car car2 = new Car("Mercedes", "C300", 2018, null);
+        Car car3 = new Car("Audi", "A5", 2014, null);
 
         createCarsQueue();
 
@@ -53,8 +53,8 @@ class CarWashTest {
     }
 
     private void createCarsQueue() {
-        carWash.addCarToQueue(new Car("Bmw", "340i", null));
-        carWash.addCarToQueue(new Car("Mercedes", "C300", null));
-        carWash.addCarToQueue(new Car("Audi", "A5", null));
+        carWash.addCarToQueue(new Car("Bmw", "340i", 2015, null));
+        carWash.addCarToQueue(new Car("Mercedes", "C300", 2018, null));
+        carWash.addCarToQueue(new Car("Audi", "A5", 2014, null));
     }
 }

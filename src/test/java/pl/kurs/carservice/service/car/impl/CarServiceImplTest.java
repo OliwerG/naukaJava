@@ -21,17 +21,17 @@ import java.util.List;
 class CarServiceImplTest {
 
     private final List<Car> carList = List.of(
-            new Car("Bmw", "M3", null),
-            new Car("Audi", "A6", null),
-            new Car("Mercedes", "C", null),
-            new Car("Opel", "Corsa", null)
+            new Car("Bmw", "M3", 2015, null),
+            new Car("Audi", "A6", 2010, null),
+            new Car("Mercedes", "C", 2011, null),
+            new Car("Opel", "Corsa", 2008, null)
     );
 
     private final List<Car> expectedResult = List.of(
-            new Car("Audi", "A6", null),
-            new Car("Bmw", "M3", null),
-            new Car("Mercedes", "C", null),
-            new Car("Opel", "Corsa", null)
+            new Car("Audi", "A6", 2010, null),
+            new Car("Bmw", "M3", 2015, null),
+            new Car("Mercedes", "C", 2011, null),
+            new Car("Opel", "Corsa", 2008, null)
     );
 
     @Mock
@@ -51,7 +51,7 @@ class CarServiceImplTest {
     @Test
     @WithMockUser(username = "user", password = "123", authorities = "USER")
     void getAllBmw() {
-        List<Car> expected = List.of(new Car("Bmw", "M3", null));
+        List<Car> expected = List.of(new Car("Bmw", "M3", 2015, null));
 
         Mockito.when(carRepository.findAll()).thenReturn(carList);
 
