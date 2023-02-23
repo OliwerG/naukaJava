@@ -25,6 +25,7 @@ public class CarServiceApplication {
         Car car = new Car(MERCEDES, "S-klasa", 2020, new Engine("4500cm", 465, 650));
         Car car1 = new Car("Audi", "RS7", 2021,  new Engine("4000cm", 560, 700));
         Car car2 = new Car("BMW", "M8", 2022, new Engine("4800cm", 625, 700));
+        Car car3 = new Car("Porsche", "Carrera", 2022, new Engine("3000cm", 500, 700));
 
         carRepository.save(car);
         carRepository.save(car1);
